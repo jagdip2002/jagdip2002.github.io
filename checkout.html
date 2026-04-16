@@ -762,8 +762,8 @@
   }
 
   async function initiateCashfreePayment(orderData, amount) {
-    // Call Firebase Cloud Function to create Cashfree order
-    var resp = await fetch('https://us-central1-heal-yourr-self.cloudfunctions.net/createCashfreeOrder', {
+    // Call Netlify Function to create Cashfree order
+    var resp = await fetch('/.netlify/functions/create-cashfree-order', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
