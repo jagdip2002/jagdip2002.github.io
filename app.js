@@ -213,11 +213,13 @@
     }
   };
 
-  var currentProductKey = null;
-  
   /* ── OPEN MODAL ── */
-  window.openProduct = function(key) {
-    currentProductKey = key;
+  window.openProduct = function(key, event) {
+    // Ignore if click came from a button
+    if (event && (event.target.classList.contains('add-btn') || event.target.closest('button'))) {
+      return;
+    }
+    
     var p = products[key];
     if (!p) return;
     document.getElementById('modal-type').textContent = p.type;
@@ -246,7 +248,7 @@
 
     var buyBtn = document.getElementById('modal-buy');
     buyBtn.href = p.link;
-    buyBtn.textContent = 'Buy Now';
+    buyBtn.textContent = 'Buy Now — ' + p.price;
 
     document.getElementById('product-modal').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -349,7 +351,15 @@
   window.cartItems = [];
 
   window.addToCart = function(btn, key) {
-    // This function is no longer used - kept for compatibility
+    // FORCE hide product modal
+    var modal = document.getElementById('product-modal');
+    modal.classList.remove('open');
+    modal.classList.add('hidden');
+    
+    if (!window.currentUser) { 
+      openAuthModal(); 
+      return; 
+    }
     var p = products[key];
     if (!p) return;
     var existing = window.cartItems.find(function(i){ return i.key===key; });
@@ -358,36 +368,12 @@
     } else {
       window.cartItems.push({ key: key, name: p.name, type: p.type, price: p.price, priceNum: parseInt(p.price.replace(/[^0-9]/g,'')), img: p.img, placeholder: p.placeholder, qty: 1 });
     }
+    btn.textContent = 'Added ✓';
+    btn.style.background = 'var(--sage)'; btn.style.color='#fff'; btn.style.borderColor='var(--sage)';
+    setTimeout(function(){ btn.textContent='Add to Cart'; btn.style.background=''; btn.style.color=''; btn.style.borderColor=''; }, 1800);
     renderCart();
     if (window.saveCartToFirebase) window.saveCartToFirebase();
     openCart();
-  }
-
-  window.addToCartFromModal = function() {
-    if (!currentProductKey) return;
-    var key = currentProductKey;
-    var p = products[key];
-    if (!p) return;
-    
-    // Add to cart directly (no auth needed)
-    var existing = window.cartItems.find(function(i){ return i.key===key; });
-    if (existing) {
-      existing.qty += 1;
-    } else {
-      window.cartItems.push({ key: key, name: p.name, type: p.type, price: p.price, priceNum: parseInt(p.price.replace(/[^0-9]/g,'')), img: p.img, placeholder: p.placeholder, qty: 1 });
-    }
-    
-    // Show success
-    var btn = document.getElementById('modal-add-cart');
-    btn.textContent = 'Added to Cart ✓';
-    btn.style.background = 'var(--sage)';
-    setTimeout(function(){
-      btn.textContent = 'Add to Cart';
-      btn.style.background = '';
-    }, 1500);
-    
-    renderCart();
-    if (window.saveCartToFirebase) window.saveCartToFirebase();
   }
 
   window.renderCart = function() {
