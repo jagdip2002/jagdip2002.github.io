@@ -1187,14 +1187,6 @@
           <label style="display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Email Address *</label>
           <input id="bk-email" type="email" placeholder="your@email.com" style="width:100%;padding:11px 14px;border:1.5px solid var(--ivory);border-radius:6px;font-family:'Jost',sans-serif;font-size:14px;background:var(--cream);color:var(--charcoal);outline:none;">
         </div>
-        <div style="margin-bottom:14px;">
-          <label style="display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Session Type</label>
-          <select id="bk-session" style="width:100%;padding:11px 14px;border:1.5px solid var(--ivory);border-radius:6px;font-family:'Jost',sans-serif;font-size:14px;background:var(--cream);color:var(--charcoal);outline:none;">
-            <option>Crystal Healing Session — ₹1,499</option>
-            <option>Energy Healing + Meditation — ₹2,199</option>
-            <option>Monthly Healing Journey — ₹4,999</option>
-          </select>
-        </div>
         <div style="margin-bottom:20px;">
           <label style="display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Cause / Reason for Healing *</label>
           <textarea id="bk-reason" rows="3" placeholder="Briefly share what you are seeking healing for — anxiety, relationships, energy, grief, spiritual growth..." style="width:100%;padding:11px 14px;border:1.5px solid var(--ivory);border-radius:6px;font-family:'Jost',sans-serif;font-size:14px;background:var(--cream);color:var(--charcoal);outline:none;resize:none;line-height:1.6;"></textarea>
@@ -1730,68 +1722,31 @@
       <h2>Healing Sessions</h2>
       <p>Personal, one-on-one sessions held online or in person. Each session is tailored fully to you — your energy, your needs, your healing journey.</p>
     </div>
-    <div class="sessions-grid">
-      <div class="session-card reveal">
-        <div class="session-head" style="background:var(--sage);">
-          <div class="session-icon">◈</div>
-          <h3 style="color:var(--cream);">Crystal Healing Session</h3>
-          <p style="color:#c8d6bc;">60 minutes · Online or In-person</p>
-        </div>
-        <div class="session-body">
-          <p>A full-body crystal healing session where crystals are placed on and around your energy centres. Deep relaxation, chakra balancing and energetic clearing.</p>
-          <ul class="session-features">
-            <li>✦ &nbsp;Full chakra assessment</li>
-            <li>✦ &nbsp;Crystal layout &amp; energy clearing</li>
-            <li>✦ &nbsp;Post-session guidance &amp; notes</li>
-            <li>✦ &nbsp;Crystal recommendation for home</li>
-          </ul>
-          <div class="session-foot">
-            <span class="session-price">₹1,499</span>
-            <button onclick="openBookingModal('Crystal Healing Session - ₹1,499')" class="btn btn-filled" style="font-size:11px;padding:10px 20px;">Book Now</button>
-        <div class="session-badge-bar">Most Popular</div>
-        <div class="session-head" style="background:var(--charcoal);">
-          <div class="session-icon">☽</div>
-          <h3 style="color:var(--cream);">Energy Healing + Meditation</h3>
-          <p style="color:#8a8880;">90 minutes · Online or In-person</p>
-        </div>
-        <div class="session-body">
-          <p>A combined session — crystal healing followed by a deeply personalised guided meditation recorded just for you. You leave with an MP3 of your personal meditation to keep forever.</p>
-          <ul class="session-features">
-            <li>✦ &nbsp;Full crystal healing session</li>
-            <li>✦ &nbsp;Personal guided meditation recorded for you</li>
-            <li>✦ &nbsp;MP3 of YOUR meditation to keep</li>
-            <li>✦ &nbsp;Follow-up voice note within 48hrs</li>
-          </ul>
-          <div class="session-foot">
-            <span class="session-price">₹2,199</span>
-            <button onclick="openBookingModal()" class="btn btn-filled" style="font-size:11px;padding:10px 20px;">Book Now</button>
-          </div>
-        </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:900px;margin:0 auto 56px;" class="reveal">
+      <div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:32px;font-style:italic;color:var(--charcoal);margin-bottom:18px;line-height:1.3;">What is energy healing?</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:14px;">Energy healing is the practice of working with the body's subtle energy field to release blockages, restore balance and support deep emotional and physical wellbeing. Every thought, emotion and experience leaves an imprint on your energy — healing is the gentle process of clearing what no longer serves you.</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:14px;">Using crystals, intention, breathwork and guided meditation, sessions are designed to bring your nervous system into a state of calm, help you reconnect with yourself and create space for genuine transformation.</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.9;">Whether you are navigating grief, anxiety, burnout, relationship pain or simply feeling disconnected — there is always a way back to yourself. Healing is not magic. It is presence, awareness and the courage to feel.</p>
       </div>
-      <div class="session-card reveal" style="transition-delay:0.2s;">
-        <div class="session-head" style="background:#3C3489;">
-          <div class="session-icon">✦</div>
-          <h3 style="color:#EEEDFE;">Monthly Healing Journey</h3>
-          <p style="color:#AFA9EC;">4 sessions · 1 per week · Online</p>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:var(--white);border-radius:12px;padding:20px 22px;border:1px solid rgba(181,96,58,0.12);">
+          <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:6px;">Crystal Healing</p>
+          <p style="font-size:14px;color:var(--muted);line-height:1.7;">Crystals are placed on and around the body's energy centres to dissolve stagnant energy, balance the chakras and encourage the body's own healing intelligence to activate.</p>
         </div>
-        <div class="session-body">
-          <p>A full month of healing support. One session per week plus unlimited WhatsApp support between sessions. Perfect for big life changes or deep emotional healing.</p>
-          <ul class="session-features">
-            <li>✦ &nbsp;4 × 60-minute healing sessions</li>
-            <li>✦ &nbsp;WhatsApp support all month</li>
-            <li>✦ &nbsp;Personalised crystal kit posted to you</li>
-            <li>✦ &nbsp;2 personal meditation MP3s</li>
-          </ul>
-          <div class="session-foot">
-            <span class="session-price">₹4,999</span>
-            <button onclick="openBookingModal()" class="btn btn-filled" style="font-size:11px;padding:10px 20px;">Book Now</button>
-          </div>
+        <div style="background:var(--white);border-radius:12px;padding:20px 22px;border:1px solid rgba(181,96,58,0.12);">
+          <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:6px;">Guided Meditation</p>
+          <p style="font-size:14px;color:var(--muted);line-height:1.7;">Personalised meditations created just for you, woven with visualisation, breath and sound to quiet the mind and access deeper layers of healing that words alone cannot reach.</p>
+        </div>
+        <div style="background:var(--white);border-radius:12px;padding:20px 22px;border:1px solid rgba(181,96,58,0.12);">
+          <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:6px;">Energy Work</p>
+          <p style="font-size:14px;color:var(--muted);line-height:1.7;">Gentle, intuitive energy work to clear emotional residue from the body's field — releasing old patterns, ancestral trauma and the weight of experiences you have been carrying too long.</p>
         </div>
       </div>
     </div>
-    <div style="text-align:center;background:var(--white);border-radius:16px;padding:32px 24px;border:1px solid rgba(181,96,58,0.12);max-width:600px;margin:0 auto;" class="reveal">
-      <p style="font-family:'Cormorant Garamond',serif;font-size:24px;margin-bottom:10px;font-style:italic;">How to book your session</p>
-      <p style="font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.8;">Drop your name, session choice and preferred time below and I will personally get back to you within 24 hours.</p>
+    <div style="text-align:center;background:var(--white);border-radius:16px;padding:36px 28px;border:1px solid rgba(181,96,58,0.12);max-width:600px;margin:0 auto;" class="reveal">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:26px;margin-bottom:10px;font-style:italic;">Ready to begin your healing?</p>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.8;">Send a booking request and I will personally reach out within 24 hours to understand your needs and guide you to the right session.</p>
       <button onclick="openBookingModal()" class="btn btn-filled">Send a Booking Request</button>
     </div>
   </div>
