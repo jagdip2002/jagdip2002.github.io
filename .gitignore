@@ -21,3 +21,5 @@ build/
 .env
 .env.local
 .env.*.local
+functions/.env
+functions/.runtimeconfig.json
